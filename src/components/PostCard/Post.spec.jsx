@@ -6,13 +6,11 @@ const props = postCardPropsMock;
 
 describe('<PostCard />', () => {
   it('should render PostCard correctly', () => {
-    const { debug } = render(<PostCard {...props} />);
+    render(<PostCard {...props} />);
 
-    expect(screen.getByRole('img', { name: /title1/i }))
-      .toHaveAttribute('src', 'img/img.png');
-    expect(screen.getByRole('heading', { name: 'title1' }))
-      .toBeInTheDocument();
-    expect(screen.getByText('body1')).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: /title 1/i })).toHaveAttribute('src', 'img/img.png');
+    expect(screen.getByRole('heading', { name: 'title 1 1' })).toBeInTheDocument();
+    expect(screen.getByText('body 1')).toBeInTheDocument();
   });
 
   it('should match snapshot', () => {
